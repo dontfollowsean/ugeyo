@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'calendar-app',
+    modulePrefix: 'u-ge-yo',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
