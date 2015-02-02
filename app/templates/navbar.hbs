@@ -1,0 +1,27 @@
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">uGeYo</a>
+        </div>
+
+        <div id="authbar" class="navbar-collapse collapse navbar-right">
+          {{#if isAuthenticated}}
+          <p class="navbar-right navbar-text">Signed in as {{user.username}}, <a href="#" {{action "logout"}}>logout.</a></p>                       
+          {{else}}
+          <p class="navbar-right navbar-text">{{#link-to "login"}}Please sign in.{{/link-to}}</p>
+          {{/if}}
+        </div><!--/.nav-collapse -->
+        <ul class="nav navbar-nav ">
+
+          <li id="cal-nav"><a href="" {{action "showCal"}}>Calendar</a></li>
+          <li id="map-nav"><a href="" {{action "showMap"}}>Map</a></li>
+        </ul>
+      </div>
+    </nav>
