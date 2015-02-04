@@ -15,70 +15,13 @@ export default Ember.Component.extend({
     console.log("calendarEvents>");
     console.log(calendarEvents);
     return self.fullCalendar({
-      events: calendarEvents,//access array of events here
-      //TODO: show events from kinvey in calendar
-      // events: [
-      // {
-      // 	title: 'All Day Event',
-      // 	start: '2015-01-01'
-      // },
-      // {
-      // 	title: 'Long Event',
-      // 	start: '2015-01-07',
-      // 	end: '2015-01-10'
-      // },
-      // {
-      // 	id: 999,
-      // 	title: 'Repeating Event',
-      // 	start: '2015-01-09T16:00:00'
-      // },
-      // {
-      // 	id: 999,
-      // 	title: 'Repeating Event',
-      // 	start: '2015-01-16T16:00:00'
-      // },
-      // {
-      // 	title: 'Conference',
-      // 	start: '2015-01-01',
-      // 	end: '2015-01-13'
-      // },
-      // {
-      // 	title: 'Meeting',
-      // 	start: '2015-01-12T10:30:00',
-      // 	end: '2015-01-12T12:30:00'
-      // },
-      // {
-      // 	title: 'Lunch',
-      // 	start: '2015-01-12T12:00:00'
-      // },
-      // {
-      // 	title: 'Meeting',
-      // 	start: '2015-01-12T14:30:00'
-      // },
-      // {
-      // 	title: 'Happy Hour',
-      // 	start: '2015-01-12T17:30:00'
-      // },
-      // {
-      // 	title: 'Dinner',
-      // 	start: '2015-01-12T20:00:00'
-      // },
-      // {
-      // 	title: 'Birthday Party',
-      // 	start: '2015-01-13T07:00:00'
-      // },
-      // {
-      // 	title: 'Click for Google',
-      // 	url: 'http://google.com/',
-      // 	start: '2015-01-28'
-      // }
-      // ],
+      events: calendarEvents,
       header: {
       	left: 'prev,next today',
       	center: 'title',
       	right: 'month,agendaWeek,agendaDay'
       },
-      editable: true,
+      editable: false,
       theme: false,
       eventLimit: true,
       dayClick: function(date, jsEvent, view) {
@@ -115,7 +58,7 @@ export default Ember.Component.extend({
 renderEvents: (function(){
 	var self = Ember.$('#calendar');
 	self.fullCalendar( 'rerenderEvents' );
-	console.log('renderE '+this.theEvents);
+	console.log('renderE '+calendarEvents);
 
 }),
 
@@ -126,14 +69,6 @@ actions: {
 		this.theEvents.pushObject(newEvent);
 		this.$("#calendar").fullCalendar('renderEvent', newEvent, true);
 
-	},
-	pingKinvey: function(){
-		var promise = Kinvey.ping();
-		promise.then(function(response) {
-			alert('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
-		}, function(error) {
-			alert('Kinvey Ping Failed. Response: ' + error.description);
-		});
 	}
 }
 

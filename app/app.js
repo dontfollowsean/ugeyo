@@ -15,6 +15,7 @@ var App = Ember.Application.extend({
 var kinveyOptions = {
 	appKey : 'kid_TeqDzWKufm',
 	appSecret : 'dc90c1194202411db99472bde66bdc26',//TODO: MASTER KEY!!!
+	// appSecret : 'b8e28c9090184a5492678f62dd9553cf',//APP KEY
 	debug : true // Show debug messages.
 };
 //dont forget to Add kinvey to .jshintrc predefinitions
