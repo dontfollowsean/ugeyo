@@ -58,7 +58,7 @@ export default Ember.Component.extend({
 renderEvents: (function(){
 	var self = Ember.$('#calendar');
 	self.fullCalendar( 'rerenderEvents' );
-	console.log('renderE '+calendarEvents);
+	//console.log('renderE '+calendarEvents);
 
 }),
 
