@@ -24,5 +24,6 @@ app.import('bower_components/fullcalendar/dist/fullcalendar.js');
 app.import('bower_components/fullcalendar/dist/fullcalendar.css');
 app.import('bower_components/kinvey/kinvey-ember-2.0.0-beta.min.js');
 
+app.import('vendor/gmaps.js');
 
 module.exports = app.toTree();

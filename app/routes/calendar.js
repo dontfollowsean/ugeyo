@@ -7,10 +7,10 @@ export default Ember.Route.extend({
 		promise.then(fulfill,reject);
 
 		function fulfill(response) {
-			console.log("Kinvey response" + response);
+			console.log("Kinvey response: " + response);
 		}
 		function reject(error) {
-			console.log("Kinvey response error: "+ error.error);
+			console.log("Kinvey response error: " + error.error);
 		}
 
 		return promise;
@@ -35,6 +35,6 @@ export default Ember.Route.extend({
 			allEvents.push(newEvent);
 		});
 
-		controller.set('model', allEvents);
+		controller.set('events', allEvents);
 	}
 });

@@ -3,3 +3,7 @@ html, body {
 	padding-top: 15px;
 }
 
+.map-canvas {
+  width: 500;
+  height: 500px;
+}
